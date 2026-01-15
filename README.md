@@ -6,7 +6,7 @@ Instructions:
 1. Copy all files from repo into Home Assistant folder
 2. Login to https://smarthome.brivo.com/
 3. Click on your unit
-4. Open the Inspect Element window on Chrome
+4. Open the Inspect Element window on your browser
 5. Navigate to the Network tab and search for `token`
 6. Copy the token into [secrets.yaml](secrets.yaml) under the `brivo_token` entry
 7. For each light you want to add, add a new entry to [brivo_light.yaml](brivo_light.yaml)
