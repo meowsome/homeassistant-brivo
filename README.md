@@ -9,11 +9,11 @@ Instructions:
 4. Open the Inspect Element window on your browser
 5. Navigate to the Network tab and search for `token`
 6. Copy the token into [secrets.yaml](secrets.yaml) under the `brivo_token` entry
-7. For each light you want to add, add a new entry to [brivo_light.yaml](brivo_light.yaml)
+7. For each light you want to add, add a new entry to [brivo_light.yaml](brivo_light.yaml) (there are currently two examples in the file, Bedroom and Entry)
     1. Call it whatever you'd like in `friendly_name`
     2. Using Inspect Element, find the light's `main-icon` div and copy the 6-digit from the `device-id` attribute to `device_id` in the config file
     3. To make the status work, change the `sensor.xxxx` sensor name under `value_template`
-8. Do the same for each lock
+8. Do the same for each lock using [brivo_lock.yaml](brivo_lock.yaml)
 9. Restart Home Assistant
 
 Unfortunately, the apartment I lived in did not have a smart thermostat, so I was not able to add that to this repository. 
