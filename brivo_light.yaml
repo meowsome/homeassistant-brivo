@@ -1,0 +1,35 @@
+- platform: template
+  lights:
+    brivo_bedroom_light:
+      friendly_name: "Brivo Bedroom Light"   
+      turn_on:
+        service: rest_command.brivo_on
+        data:
+          device_id: "000000"
+      turn_off:
+        service: rest_command.brivo_off
+        data:
+          device_id: "000000"
+      set_level:
+        service: rest_command.brivo_brightness
+        data:
+          device_id: "000000"
+          brightness: "{{ (brightness / 255 * 100) | round(0) }}"
+      value_template: "{{ states('sensor.brivo_bedroom_light_sensor') | int(0) > 0 }}"
+    brivo_entry_light:
+      friendly_name: "Brivo Entry Light"   
+      turn_on:
+        service: rest_command.brivo_on
+        data:
+          device_id: "000001"
+      turn_off:
+        service: rest_command.brivo_off
+        data:
+          device_id: "000001"
+      set_level:
+        service: rest_command.brivo_brightness
+        data:
+          device_id: "000001"
+          brightness: "{{ (brightness / 255 * 100) | round(0) }}"
+      value_template: "{{ states('sensor.brivo_entry_light_sensor') | int(0) > 0 }}"
+

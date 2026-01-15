@@ -1,0 +1,31 @@
+brivo_brightness:
+  url: "https://api.smarthome.brivo.com/v2/device/{{ device_id }}/set_level"
+  method: PUT
+  headers: 
+    authorization: !secret brivo_token
+  payload: '{"level": {{ brightness }} }'
+  content_type: 'application/json; charset=utf-8'
+
+brivo_on:
+  url: "https://api.smarthome.brivo.com/v2/device/{{ device_id }}/on"
+  method: PUT
+  headers:
+    authorization: !secret brivo_token
+
+brivo_off:
+  url: "https://api.smarthome.brivo.com/v2/device/{{ device_id }}/off/250"
+  method: PUT
+  headers:
+    authorization: !secret brivo_token
+
+brivo_lock:
+  url: "https://api.smarthome.brivo.com/v2/device/{{ device_id }}/lock"
+  method: PUT
+  headers:
+    authorization: !secret brivo_token
+
+brivo_unlock:
+  url: "https://api.smarthome.brivo.com/v2/device/{{ device_id }}/unlock"
+  method: PUT
+  headers:
+    authorization: !secret brivo_token

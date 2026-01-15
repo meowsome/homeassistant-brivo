@@ -1,0 +1,11 @@
+- platform: template
+  name: "Brivo Door Lock" 
+  lock:
+    service: rest_command.brivo_lock
+    data:
+      device_id: "000002"
+  unlock:
+    service: rest_command.brivo_unlock
+    data:
+      device_id: "000002"
+  value_template: "{{ is_state('sensor.brivo_door_lock_sensor', 'secured') }}"
